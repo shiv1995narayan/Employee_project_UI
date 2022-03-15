@@ -1,0 +1,63 @@
+
+<h2  mat-dialog-title> <mat-spinner mode="indeterminate" diameter="20" *ngIf="spinner"></mat-spinner>Registration page</h2>
+   
+
+    <form [formGroup]="regForm">
+        <mat-dialog-content>
+        <div fxLayout="row">
+            <mat-form-field fxFlex="100">
+                <mat-label>Name</mat-label>
+                <input formControlName="name" type="text" matInput placeholder="Enter Name">
+            </mat-form-field>
+        </div>
+        <div *ngIf="regForm.get('name').touched && regForm.get('name').invalid">
+            <mat-error *ngIf="regForm.get('name').errors.required">name must be Required</mat-error>
+        </div><br>
+
+
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+
+            <mat-form-field fxflex="50">
+                <mat-label>Experiance</mat-label>
+                <mat-select formControlName="experiance">
+                    <mat-option>none</mat-option>
+                    <mat-option value="Fresher">Fresher</mat-option>
+                    <mat-option value="Experiance">Experiance</mat-option>
+
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field fxflex="50">
+                <mat-label>Role in Team</mat-label>
+                <mat-select formControlName="role">
+                    <mat-option>none</mat-option>
+                    <mat-option value="UI devloper">UI devloper</mat-option>
+                    <mat-option value="Java Devloper">Java Devloper</mat-option>
+                    <mat-option value="Testing">Testing</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+               
+                <mat-form-field fxflex="50">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" type="email" matInput placeholder="example@gmail.com">
+                </mat-form-field>
+
+            <mat-form-field fxflex="50">
+                <mat-label>Default password</mat-label>
+                <input formControlName="password" type="password" matInput placeholder="Enter password 1234">
+            </mat-form-field>
+        </div>
+       
+    </mat-dialog-content>
+
+<mat-dialog-actions>
+
+    <button [disabled]="regForm.invalid" mat-raised-button (click)="onSubmit(regForm)" color="primary">submit</button>
+    <button mat-raised-button color="warn" mat-dialog-close>close</button>
+</mat-dialog-actions>
+
+</form>

@@ -1,0 +1,38 @@
+<body class="mainDiv">
+<mat-card class="card">
+    <mat-card-header >
+        <div mat-card-avatar class="header"></div>
+        <mat-card-title>Employee</mat-card-title>
+        <mat-card-subtitle>Login Form</mat-card-subtitle>
+    </mat-card-header>
+
+      
+        <form [formGroup]="loginForm">
+        <div  class="gap" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-form-field fxFlex="100">
+                <mat-label>UserName</mat-label>
+                <input type="email" required matInput placeholder="example@gmail.com" formControlName="userName">
+            </mat-form-field>
+        </div>
+        <div  *ngIf="loginForm.get('userName').touched && loginForm.get('userName').invalid">
+            <mat-error *ngIf="loginForm.get('userName').errors.required">Email Must be Required</mat-error>
+            <mat-error *ngIf="loginForm.get('userName').errors.email">Enter Valid Email</mat-error>
+        </div>
+        <div class="gap" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-form-field fxFlex="100">
+                <mat-label>Password</mat-label>
+                <input required type="password" placeholder="Enter Password" matInput formControlName="password">
+            </mat-form-field>
+        </div>
+        <div *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">
+            <mat-error *ngIf="loginForm.get('password').invalid">password Must be Required</mat-error>
+        </div>
+
+    </form>
+
+    <mat-card-actions>
+        <button [disabled]="loginForm.invalid" mat-raised-button color="primary" (click)="check()">submit</button>
+      </mat-card-actions>
+      <mat-error style="margin-left: 50% ;"*ngIf="match">Enter valid user name and password</mat-error>
+</mat-card>
+</body>

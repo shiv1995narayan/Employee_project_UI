@@ -1,0 +1,32 @@
+table {
+  width: 80%;
+    margin-left: 80px;
+    margin-top: 20px;
+  }
+  .newEmployee
+  {
+   justify-content: space-between;
+   margin: 50px;
+    
+  }
+  .delete
+  {
+    margin-right:120px;
+  }
+
+  .shadow {
+    background-color: white;
+    min-height: 4.5em;
+    overflow: hidden;
+    box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.1);
+    width:80%;
+    padding: 1.231em;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .bold{
+    font-weight: bold;
+  }

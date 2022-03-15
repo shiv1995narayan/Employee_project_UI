@@ -1,0 +1,79 @@
+
+<p>
+  <mat-toolbar  color="primary">
+   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button matTooltip="Add Employee" mat-icon-button (click)="openEmployPopup(null)" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>add</mat-icon>
+  </button>
+  <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon>share</mat-icon>
+ </button> -->
+</mat-toolbar>
+</p>
+
+<div 
+fxLayout="column"
+fxLayoutAlign="center center"
+>
+  <div
+class="shadow"
+fxLayout="row"
+fxFlex="100"
+[style.width]="'80%'"
+fxLayoutAlign="space-between ceter"
+>
+<div fxFlex="12" class="bold">{{'name'}}</div>
+<div fxFlex="20" class="bold">{{'email'}}</div>
+<div fxFlex="10" class="bold">{{'role'}}</div>
+<div fxFlex="10" class="bold">{{'experiance'}}</div>
+<div fxFlex="5" class="bold">
+</div>
+<div fxFlex="5">
+</div>
+</div>
+</div>
+<div 
+fxLayout="column"
+fxLayoutAlign="center center"
+>
+  <div
+class="shadow"
+fxLayout="row"
+fxFlex="100"
+[style.width]="'80%'"
+fxLayoutAlign="space-between ceter"
+*ngFor="let emp of allEmployeeData"
+>
+<div fxFlex="12">{{emp.name}}</div>
+<div fxFlex="20">{{emp.email}}</div>
+<div fxFlex="10">{{emp.role}}</div>
+<div fxFlex="10">{{emp.experiance}}</div>
+<div fxFlex="5">
+  <button mat-mini-fab color="primary" (click)="openEmployPopup(emp)">
+    <mat-icon>edit</mat-icon>
+  </button>
+</div>
+
+<div fxFlex="5">
+  <button (click)="checkEmpID(emp.id)" mat-mini-fab color="danger">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
+
+</div>
+
+</div>
+
+<div 
+fxLayout="column"
+fxLayoutAlign="center center"
+[style.height]="'100%'"
+*ngIf="allEmployeeData?.length === 0"
+>
+
+<img src="./assets/data/no-data-found.jpg" alt="">
+</div>

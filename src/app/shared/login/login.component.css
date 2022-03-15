@@ -1,0 +1,33 @@
+:host
+{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
+mat-card
+{
+    max-width: 400px;
+    max-height: 700px;
+   margin-left: 410px;
+   
+   
+}
+.header
+{
+    /* background-image: url('./employee.png'); */
+    background-size: cover;
+}
+.mainDiv
+{
+    background-color: #5da0ba;
+    padding-top: 220px;
+}
+.card
+{
+    max-width: 500px;
+    
+}
+.gap
+{
+    margin-top: 40px;
+}

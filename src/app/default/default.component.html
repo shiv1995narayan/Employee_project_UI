@@ -1,0 +1,29 @@
+<app-header (TriggeredForme)="Triggered($event)"></app-header>
+<mat-drawer-container>
+    <mat-drawer mode="side"[opened]="opened">
+        <button mat-icon-button>
+            <mat-icon (click)="ticketChange()">record_voice_over</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>settings_input_antenna</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>language</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>person</mat-icon>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-icon-button>
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>settings</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>navigate_next</mat-icon>
+        </button>
+    </mat-drawer>
+    <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>
+<app-footer></app-footer>
